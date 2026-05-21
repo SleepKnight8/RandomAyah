@@ -114,3 +114,8 @@ let AyahRange = {
     113: 5,
     114: 6
 }
+
+function RandomAyah() {
+    let Surah = Math.floor(Math.random() * 114) + 1;
+    let Ayah = Math.floor(Math.random() * AyahRange[Surah]) + 1;
+}
