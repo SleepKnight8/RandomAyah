@@ -115,7 +115,15 @@ let AyahRange = {
     114: 6
 }
 
-function RandomAyah() {
+function RandomAyah(){
     let Surah = Math.floor(Math.random() * 114) + 1;
     let Ayah = Math.floor(Math.random() * AyahRange[Surah]) + 1;
+
+    fetch(`https://api.alquran.cloud/v1/ayah/${Surah}:${Ayah}/quran-simple`)
+        .then (res => res.json())
+        .then(json => {
+            document.getElementById("ayah").innerHTML = json["data"]["text"];
+            document.getElementById("ayah").innerHTML = json["data"]["surah"]["arabicName"];
+            document.getElementById("ayah").innerHTML = json["data"]["numberInSurah"];
+        })
 }
