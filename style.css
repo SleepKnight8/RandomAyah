@@ -1,55 +1,77 @@
 body {
     margin: 0;
-    padding: 0;
+    padding: 20px;
     font-family: Arial, sans-serif;
     background: linear-gradient(135deg, #13171c 0%, #1b2028 100%);
-    text-shadow: #f5e05a 8px 8px 20px;
     color: #f5e05a;
-    height: 100vh;
+    text-shadow: 0 0 15px rgba(245, 224, 90, 0.5);
+
+    min-height: 100vh;
 
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    gap: 15px; /* controls spacing between all elements */
+    box-sizing: border-box;
 }
 
 h1 {
-    margin-top: 20px;
+    margin: 20px 0;
+    text-align: center;
+    font-size: clamp(2rem, 5vw, 3rem);
 }
 
 #ayah-container {
     display: flex;
     flex-direction: column;
-    border: #f5e05a dashed 8px;
-    border-radius: 10px;
-
     justify-content: center;
     align-items: center;
     text-align: center;
 
-    width: min(500px, 80vw);
-    min-height: 200px;
+    border: 6px dashed #f5e05a;
+    border-radius: 18px;
+
+    width: min(90vw, 700px);
+    min-height: 220px;
+
     padding: 20px;
+    box-sizing: border-box;
 }
 
 #ayahtext-container {
-    text-shadow: #f5e05a 8px 8px 20px;
+    width: 100%;
+}
+
+#ayah {
+    margin: 0;
+    font-size: clamp(1.2rem, 4vw, 2rem);
+    line-height: 1.7;
+    word-wrap: break-word;
 }
 
 #surah-ditail-container {
-    text-shadow: #f5e05a 3px 3px 15px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#surah,
+#ayahindex {
+    margin: 0;
+    font-size: clamp(1rem, 3vw, 1.3rem);
 }
 
 #language-container {
-    margin-top: 5px;
+    margin-top: 20px;
+    text-align: center;
 }
 
 #language-select {
     background: #f5e05a;
     border: none;
     border-radius: 8px;
-    padding: 6px 10px;
+    padding: 10px;
     font-size: 16px;
     cursor: pointer;
 }
@@ -60,15 +82,16 @@ h1 {
 }
 
 #buttons-container {
-    margin-top: 5px;
+    margin-top: 20px;
 }
 
 #buttons-container button {
     background: #f5e05a;
     border-radius: 10px;
     border: none;
-    padding: 8px 14px;
+    padding: 10px 18px;
     font-weight: bold;
+    font-size: 16px;
     cursor: pointer;
     transition: 0.2s;
 }
@@ -79,7 +102,7 @@ h1 {
 }
 
 .logo {
-    margin-top: 10px;
+    margin-top: 20px;
     color: #f5e05a;
     text-decoration: none;
     font-weight: bold;
@@ -87,6 +110,6 @@ h1 {
 }
 
 .logo:hover {
-    color: #ffffff;
+    color: white;
     text-shadow: 0 0 10px #f5e05a;
 }
