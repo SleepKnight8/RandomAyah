@@ -125,8 +125,8 @@ function RandomAyah(){
     fetch(`https://api.alquran.cloud/v1/ayah/${Surah}:${Ayah}/${language}`)
         .then (res => res.json())
         .then(json => {
-            document.getElementById("ayah").innerHTML = `Surah: ${json["data"]["text"]}`;
-            document.getElementById("surah").innerHTML = json["data"]["surah"]["englishName"];
-            document.getElementById("ayahindex").innerHTML = json["data"]["numberInSurah"];
+            document.getElementById("ayah").innerHTML = json["data"]["text"];
+            document.getElementById("surah").innerHTML = `Surah Name: ${json["data"]["surah"]["englishName"]}`;
+            document.getElementById("ayahindex").innerHTML = `Ayah Number: ${json["data"]["numberInSurah"]}`;
         })
 }
