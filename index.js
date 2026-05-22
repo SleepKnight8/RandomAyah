@@ -121,19 +121,18 @@ function RandomAyah(){
     let Surah = Math.floor(Math.random() * 114) + 1;
     let Ayah = Math.floor(Math.random() * AyahRange[Surah]) + 1;
     let language = document.getElementById("language-select").value;
-    try {
-        fetch(`https://api.alquran.cloud/v1/ayah/${Surah}:${Ayah}/${language}`)
-            .then(res => res.json())
-            .then(json => {
-                document.getElementById("ayah").innerHTML = json["data"]["text"];
-                document.getElementById("surah").innerHTML = `Surah Name: ${json["data"]["surah"]["englishName"]}`;
-                document.getElementById("ayahindex").innerHTML = `Ayah Number: ${json["data"]["numberInSurah"]}`;
-            })
-    }
-    catch (error) {
-        alert(`Couldn't fetch data\n${error}`);
-        document.getElementById("ayah").innerHTML = "وَقُل رَّبِّ زِدْنِي عِلْمًا";
-        document.getElementById("surah").innerHTML = `Surah Name: Taa-Haa`;
-        document.getElementById("ayahindex").innerHTML = `Ayah Number: 114`;
-    }
+    fetch(`https://api.alquran.cloud/v1/ayah/${Surah}:${Ayah}/${language}`)
+        .then(res => res.json())
+        .then(json => {
+            document.getElementById("ayah").innerHTML = json["data"]["text"];
+            document.getElementById("surah").innerHTML = `Surah Name: ${json["data"]["surah"]["englishName"]}`;
+            document.getElementById("ayahindex").innerHTML = `Ayah Number: ${json["data"]["numberInSurah"]}`;
+        })
+
+        .catch(error =>{
+            alert(`Couldn't fetch data\n${error}`);
+            document.getElementById("ayah").innerHTML = "وَقُل رَّبِّ زِدْنِي عِلْمًا";
+            document.getElementById("surah").innerHTML = `Surah Name: Taa-Haa`;
+            document.getElementById("ayahindex").innerHTML = `Ayah Number: 114`;
+    })
 }
