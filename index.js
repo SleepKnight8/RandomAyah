@@ -126,14 +126,14 @@ function RandomAyah(){
             .then(res => res.json())
             .then(json => {
                 document.getElementById("ayah").innerHTML = json["data"]["text"];
-                document.getElementById("surah").innerHTML = `Surah Name: Taa-Haa`;
-                document.getElementById("ayahindex").innerHTML = `Ayah Number: 114`;
+                document.getElementById("surah").innerHTML = `Surah Name: ${json["data"]["surah"]["englishName"]}`;
+                document.getElementById("ayahindex").innerHTML = `Ayah Number: ${json["data"]["numberInSurah"]}`;
             })
     }
     catch (error) {
         alert(`Couldn't fetch data\n${error}`);
         document.getElementById("ayah").innerHTML = "وَقُل رَّبِّ زِدْنِي عِلْمًا";
-        document.getElementById("surah").innerHTML = `Surah Name: ${json["data"]["surah"]["englishName"]}`;
-        document.getElementById("ayahindex").innerHTML = `Ayah Number: ${json["data"]["numberInSurah"]}`;
+        document.getElementById("surah").innerHTML = `Surah Name: Taa-Haa`;
+        document.getElementById("ayahindex").innerHTML = `Ayah Number: 114`;
     }
 }
