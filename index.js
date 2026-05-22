@@ -123,7 +123,7 @@ function RandomAyah(){
         .then (res => res.json())
         .then(json => {
             document.getElementById("ayah").innerHTML = json["data"]["text"];
-            document.getElementById("ayah").innerHTML = json["data"]["surah"]["arabicName"];
-            document.getElementById("ayah").innerHTML = json["data"]["numberInSurah"];
+            document.getElementById("surah").innerHTML = json["data"]["surah"]["englishName"];
+            document.getElementById("ayahindex").innerHTML = json["data"]["numberInSurah"];
         })
 }
