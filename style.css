@@ -64,3 +64,20 @@ body {
     color: #ffffff;
     text-shadow: 0 0 10px #f5e05a;
 }
+#language-container {
+    margin-bottom: 12px;
+}
+
+#language-select {
+    background: #f5e05a;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#language-select:hover {
+    background: #887912;
+    color: #13171c;
+}
