@@ -120,7 +120,6 @@ let Ayah_Explored = [
 let Ayah_Explored_Num = 0;
 
 function RandomAyah(){
-    Ayah_Explored_Display();
     let Surah = Math.floor(Math.random() * 114) + 1;
     let Ayah = Math.floor(Math.random() * AyahRange[Surah]) + 1;
     let language = document.getElementById("language-select").value;
@@ -164,10 +163,9 @@ function load() {
     if (saved_num) {
         Ayah_Explored_Num = parseInt(saved_num);
     }
-    console.log(Ayah_Explored);
-    console.log(Ayah_Explored_Num);
 }
 load();
+Ayah_Explored_Display();
 
 
 function Ayah_Explored_Display() {
