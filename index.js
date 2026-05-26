@@ -114,10 +114,13 @@ let AyahRange = {
     113: 5,
     114: 6
 }
+let Ayah_Explored = [
 
-
+];
+let Ayah_Explored_Num = 0;
 
 function RandomAyah(){
+    Ayah_Explored_Display();
     let Surah = Math.floor(Math.random() * 114) + 1;
     let Ayah = Math.floor(Math.random() * AyahRange[Surah]) + 1;
     let language = document.getElementById("language-select").value;
@@ -127,6 +130,16 @@ function RandomAyah(){
             document.getElementById("ayah").innerHTML = json["data"]["text"];
             document.getElementById("surah").innerHTML = `Surah Name: ${json["data"]["surah"]["englishName"]}`;
             document.getElementById("ayahindex").innerHTML = `Ayah Number: ${json["data"]["numberInSurah"]}`;
+
+        let currentAyah = `${json["data"]["surah"]["englishName"]}:${json["data"]["numberInSurah"]}`;
+
+        let alreadyExplored = Ayah_Explored.includes(currentAyah);
+
+        if (!alreadyExplored) {
+            Ayah_Explored.push(currentAyah);
+            Ayah_Explored_Num ++;
+        }
+        save();
         })
 
         .catch(error =>{
@@ -135,4 +148,31 @@ function RandomAyah(){
             document.getElementById("surah").innerHTML = `Surah Name: Taa-Haa`;
             document.getElementById("ayahindex").innerHTML = `Ayah Number: 114`;
     })
+}
+
+function save() {
+    localStorage.setItem("Ayah_Explored", JSON.stringify(Ayah_Explored));
+    localStorage.setItem("Ayah_Explored_Num", Ayah_Explored_Num);
+}
+
+function load() {
+    let saved_list = localStorage.getItem("Ayah_Explored");
+    let saved_num = localStorage.getItem("Ayah_Explored_Num");
+    if (saved_list) {
+        Ayah_Explored = JSON.parse(saved_list);
+    }
+    if (saved_num) {
+        Ayah_Explored_Num = parseInt(saved_num);
+    }
+    console.log(Ayah_Explored);
+    console.log(Ayah_Explored_Num);
+}
+load();
+
+
+function Ayah_Explored_Display() {
+    let num = localStorage.getItem("Ayah_Explored_Num") || 0;
+    let percentage = (((num)/6236)*100).toFixed(2);
+    document.getElementById("AyahProgress").innerHTML = `
+        Ayah Explored: ${num}/6236 (${percentage}%)`;
 }
