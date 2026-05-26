@@ -171,6 +171,6 @@ Ayah_Explored_Display();
 function Ayah_Explored_Display() {
     let num = localStorage.getItem("Ayah_Explored_Num") || 0;
     let percentage = (((num)/6236)*100).toFixed(2);
-    document.getElementById("AyahProgress").innerHTML = `
+    document.getElementById("ayah-progress-text").innerHTML = `
         Ayah Explored: ${num}/6236 (${percentage}%)`;
 }
