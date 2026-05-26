@@ -117,6 +117,7 @@ let AyahRange = {
 let Ayah_Explored = [
 
 ];
+
 let Ayah_Explored_Num = 0;
 
 function RandomAyah(){
@@ -130,7 +131,7 @@ function RandomAyah(){
             document.getElementById("surah").innerHTML = `Surah Name: ${json["data"]["surah"]["englishName"]}`;
             document.getElementById("ayahindex").innerHTML = `Ayah Number: ${json["data"]["numberInSurah"]}`;
 
-        let currentAyah = `${json["data"]["surah"]["englishName"]}:${json["data"]["numberInSurah"]}`;
+        let currentAyah = `${json["data"]["surah"]["number"]}:${json["data"]["numberInSurah"]}`;
 
         let alreadyExplored = Ayah_Explored.includes(currentAyah);
 
