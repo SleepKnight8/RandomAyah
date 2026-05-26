@@ -139,6 +139,7 @@ function RandomAyah(){
             Ayah_Explored_Num ++;
         }
         save();
+        Ayah_Explored_Display();
         })
 
         .catch(error =>{
@@ -166,7 +167,6 @@ function load() {
 }
 load();
 Ayah_Explored_Display();
-
 
 function Ayah_Explored_Display() {
     let num = localStorage.getItem("Ayah_Explored_Num") || 0;
