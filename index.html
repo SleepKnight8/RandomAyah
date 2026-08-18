@@ -1,54 +1,196 @@
 <!doctype html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
     <title>RandomAyah</title>
+
     <link rel="stylesheet" href="style.css">
+
     <link rel="icon" href="logo.jpg">
+
 </head>
+
+
 <body>
-    <h1>RandomAyah</h1>
+
+    <!-- =========================
+         THEME SWITCH
+         ========================= -->
+
+    <input
+        type="radio"
+        name="theme"
+        id="yellowMode"
+        checked>
+
+    <input
+        type="radio"
+        name="theme"
+        id="purpleMode">
+
+
+    <div class="theme-switch">
+
+        <label
+            for="yellowMode"
+            class="theme-button">
+
+            🟡
+
+        </label>
+
+
+        <label
+            for="purpleMode"
+            class="theme-button">
+
+            🟣
+
+        </label>
+
+    </div>
+
+
+    <!-- =========================
+         TITLE
+         ========================= -->
+
+    <h1>
+        RandomAyah
+    </h1>
+
+
+    <!-- =========================
+         AYAH
+         ========================= -->
 
     <div id="ayah-container">
-        <div id="ayahtext-container">
-            <h2 id="ayah">
-                وَقُل رَّبِّ زِدْنِي عِلْمًا
-            </h2>
-        </div>
-        <div id="surah-ditail-container">
-            <h3 id="surah">Taa-Haa</h3>
-            <h3 id="ayahindex">114</h3>
-        </div>
-    </div>
-    <br>
-    <div id="language-container">
-    <label for="language-select">Language:</label>
 
-    <select id="language-select">
-        <option value="quran-simple">عربي</option>
-        <option value="en.sahih">English</option>
-        <option value="fa.fooladvand">فارسی</option>
-    </select>
+        <div id="ayahtext-container">
+
+            <h2 id="ayah">
+
+                وَقُل رَّبِّ زِدْنِي عِلْمًا
+
+            </h2>
+
+        </div>
+
+
+        <div id="surah-ditail-container">
+
+            <h3 id="surah">
+                Taa-Haa
+            </h3>
+
+            <h3 id="ayahindex">
+                114
+            </h3>
+
+        </div>
+
     </div>
+
+
+    <!-- =========================
+         LANGUAGE
+         ========================= -->
+
+    <div id="language-container">
+
+        <label for="language-select">
+            Language:
+        </label>
+
+
+        <select id="language-select">
+
+            <option value="quran-simple">
+                عربي
+            </option>
+
+            <option value="en.sahih">
+                English
+            </option>
+
+            <option value="fa.fooladvand">
+                فارسی
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <!-- =========================
+         BUTTON
+         ========================= -->
+
     <div id="buttons-container">
-        <button id="new-ayah-button" onclick="RandomAyah()">New Ayah</button>
+
+        <button
+            id="new-ayah-button"
+            onclick="RandomAyah()">
+
+            New Ayah
+
+        </button>
+
     </div>
+
+
+    <!-- =========================
+         PROGRESS
+         ========================= -->
 
     <div id="AyahProgress">
+
         <h3 id="ayah-progress-text">
-            Ayah Explored: 0/6236 (0%)
+
+            Ayah Explored:
+            0/6236 (0%)
+
         </h3>
+
     </div>
 
-    <h2>The Best Developer</h2>
 
-    <a href="https://github.com/SleepKnight8" class="logo" target="_blank">
+    <!-- =========================
+         DEVELOPER
+         ========================= -->
+
+    <h2>
+        The Best Developer
+    </h2>
+
+
+    <a
+        href="https://github.com/SleepKnight8"
+        class="logo"
+        target="_blank">
+
         SleepKnight8
+
     </a>
 
+
+    <p id="copyright">
+
+        © 2026 SleepKnight8.
+        All rights reserved.
+
+    </p>
+
+
     <script src="index.js"></script>
+
 </body>
+
 </html>
