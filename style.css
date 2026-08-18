@@ -1,121 +1,493 @@
-body {
+/* =========================
+   RESET
+   ========================= */
+
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   THEME VARIABLES
+   ========================= */
+
+body {
+
+    --main-color: #f5e05a;
+
+    --background-1: #13171c;
+    --background-2: #1b2028;
+
+    --card: #1b2129;
+
+    margin: 0;
+
     padding: 20px;
+
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #13171c 0%, #1b2028 100%);
-    color: #f5e05a;
-    text-shadow: 0 0 15px rgba(245, 224, 90, 0.5);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--background-1) 0%,
+            var(--background-2) 100%
+        );
+
+    color: var(--main-color);
+
+    text-shadow:
+        0 0 15px
+        rgba(245, 224, 90, 0.5);
 
     min-height: 100vh;
 
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
 
-    box-sizing: border-box;
+    text-align: center;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
 }
+
+
+/* =========================
+   HIDE RADIO BUTTONS
+   ========================= */
+
+#yellowMode,
+#purpleMode {
+
+    display: none;
+
+}
+
+
+/* =========================
+   THEME SWITCH
+   ========================= */
+
+.theme-switch {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.theme-button {
+
+    width: 45px;
+
+    height: 45px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border-radius: 12px;
+
+    background: #262f3b;
+
+    border: 2px solid transparent;
+
+    cursor: pointer;
+
+    font-size: 1.2rem;
+
+    transition:
+        transform 0.2s ease,
+        border 0.2s ease;
+
+}
+
+
+.theme-button:hover {
+
+    transform: scale(1.08);
+
+}
+
+
+/* Selected yellow */
+
+#yellowMode:checked ~ .theme-switch
+label[for="yellowMode"] {
+
+    border-color: #f5e05a;
+
+}
+
+
+/* Selected purple */
+
+#purpleMode:checked ~ .theme-switch
+label[for="purpleMode"] {
+
+    border-color: #b58cff;
+
+}
+
+
+/* =========================
+   TITLE
+   ========================= */
 
 h1 {
+
     margin: 20px 0;
+
     text-align: center;
-    font-size: clamp(2rem, 5vw, 3rem);
+
+    font-size:
+        clamp(
+            2rem,
+            5vw,
+            3rem
+        );
+
 }
 
+
+/* =========================
+   AYAH CONTAINER
+   ========================= */
+
 #ayah-container {
+
     display: flex;
+
     flex-direction: column;
+
     justify-content: center;
+
     align-items: center;
+
     text-align: center;
 
-    border: 6px dashed #f5e05a;
+    border:
+        6px dashed
+        var(--main-color);
+
     border-radius: 18px;
 
-    width: min(90vw, 700px);
+    width:
+        min(
+            90vw,
+            700px
+        );
+
     min-height: 220px;
 
     padding: 20px;
+
     box-sizing: border-box;
+
+    transition:
+        border-color 0.3s ease;
+
 }
+
+
+/* =========================
+   AYAH TEXT
+   ========================= */
 
 #ayahtext-container {
+
     width: 100%;
+
 }
+
 
 #ayah {
+
     margin: 0;
-    font-size: clamp(1.2rem, 4vw, 2rem);
+
+    font-size:
+        clamp(
+            1.2rem,
+            4vw,
+            2rem
+        );
+
     line-height: 1.7;
+
     word-wrap: break-word;
+
 }
 
+
+/* =========================
+   SURAH DETAILS
+   ========================= */
+
 #surah-ditail-container {
+
     margin-top: 20px;
+
     display: flex;
+
     flex-direction: column;
+
     gap: 8px;
+
 }
+
 
 #surah,
 #ayahindex {
+
     margin: 0;
-    font-size: clamp(1rem, 3vw, 1.3rem);
+
+    font-size:
+        clamp(
+            1rem,
+            3vw,
+            1.3rem
+        );
+
 }
+
+
+/* =========================
+   LANGUAGE
+   ========================= */
 
 #language-container {
+
     margin-top: 20px;
+
     text-align: center;
+
 }
+
 
 #language-select {
-    background: #f5e05a;
+
+    background:
+        var(--main-color);
+
+    color: #13171c;
+
     border: none;
+
     border-radius: 8px;
+
     padding: 10px;
+
     font-size: 16px;
+
     cursor: pointer;
+
+    font-weight: bold;
+
 }
+
 
 #language-select:hover {
+
     background: #887912;
-    color: #13171c;
+
 }
+
+
+/* =========================
+   BUTTON
+   ========================= */
 
 #buttons-container {
-    margin-top: 20px;
-}
 
+    margin-top: 20px;
+
+}
 
 
 #buttons-container button {
-    background: #f5e05a;
+
+    background:
+        var(--main-color);
+
+    color: #13171c;
+
     border-radius: 10px;
+
     border: none;
+
     padding: 10px 18px;
+
     font-weight: bold;
+
     font-size: 16px;
+
     cursor: pointer;
-    transition: 0.2s;
+
+    transition:
+        0.2s;
+
 }
+
 
 #buttons-container button:hover {
+
     background: #887912;
+
     color: #13171c;
+
+    transform: translateY(-2px);
+
 }
+
+
+/* =========================
+   PROGRESS
+   ========================= */
 
 #AyahProgress {
+
     margin-top: 30px;
+
 }
+
+
+/* =========================
+   DEVELOPER
+   ========================= */
 
 .logo {
+
     margin-top: 20px;
-    color: #f5e05a;
+
+    color:
+        var(--main-color);
+
     text-decoration: none;
+
     font-weight: bold;
-    transition: 0.3s;
+
+    transition:
+        0.3s;
+
 }
 
+
 .logo:hover {
+
     color: white;
-    text-shadow: 0 0 10px #f5e05a;
+
+    text-shadow:
+        0 0 10px
+        var(--main-color);
+
+}
+
+
+#copyright {
+
+    margin-top: 10px;
+
+    color: #999;
+
+    font-size: 0.8rem;
+
+}
+
+
+/* =========================
+   PURPLE THEME
+   ========================= */
+
+body:has(#purpleMode:checked) {
+
+    --main-color: #b58cff;
+
+    --background-1: #101010;
+    --background-2: #101010;
+
+    --card: #181818;
+
+    text-shadow:
+        0 0 15px
+        rgba(181, 140, 255, 0.5);
+
+}
+
+
+/* Purple language selector */
+
+body:has(#purpleMode:checked)
+#language-select {
+
+    background: #b58cff;
+
+}
+
+
+/* Purple button */
+
+body:has(#purpleMode:checked)
+#buttons-container button {
+
+    background: #b58cff;
+
+}
+
+
+/* Purple hover */
+
+body:has(#purpleMode:checked)
+#buttons-container button:hover {
+
+    background: #8064c2;
+
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 600px) {
+
+    body {
+
+        padding: 15px;
+
+    }
+
+
+    #ayah-container {
+
+        width: 90vw;
+
+        min-height: 180px;
+
+        padding: 15px;
+
+    }
+
+
+    #ayah {
+
+        font-size: 1.2rem;
+
+    }
+
 }
