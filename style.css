@@ -9,37 +9,16 @@
 }
 
 
-/* =========================
-   THEME VARIABLES
-   ========================= */
-
 body {
-
-    --main-color: #f5e05a;
-
-    --background-1: #13171c;
-    --background-2: #1b2028;
-
-    --card: #1b2129;
-
     margin: 0;
 
     padding: 20px;
 
     font-family: Arial, sans-serif;
 
-    background:
-        linear-gradient(
-            135deg,
-            var(--background-1) 0%,
-            var(--background-2) 100%
-        );
-
-    color: var(--main-color);
 
     text-shadow:
-        0 0 15px
-        rgba(245, 224, 90, 0.5);
+        0 0 15px;
 
     min-height: 100vh;
 
@@ -56,93 +35,25 @@ body {
         color 0.3s ease;
 }
 
-
-/* =========================
-   HIDE RADIO BUTTONS
-   ========================= */
-
-#yellowMode,
-#purpleMode {
-
-    display: none;
-
-}
-
-
 /* =========================
    THEME SWITCH
    ========================= */
 
 .theme-switch {
-
-    width: 100%;
-
     display: flex;
-
     justify-content: center;
-
-    align-items: center;
-
     gap: 10px;
 
-    margin-bottom: 10px;
-
+    padding: 20px 0;
 }
 
-
-.theme-button {
-
+.theme-switch button {
     width: 45px;
-
     height: 45px;
 
-    display: flex;
+    border-radius: 10px;
 
-    justify-content: center;
-
-    align-items: center;
-
-    border-radius: 12px;
-
-    background: #262f3b;
-
-    border: 2px solid transparent;
-
-    cursor: pointer;
-
-    font-size: 1.2rem;
-
-    transition:
-        transform 0.2s ease,
-        border 0.2s ease;
-
-}
-
-
-.theme-button:hover {
-
-    transform: scale(1.08);
-
-}
-
-
-/* Selected yellow */
-
-#yellowMode:checked ~ .theme-switch
-label[for="yellowMode"] {
-
-    border-color: #f5e05a;
-
-}
-
-
-/* Selected purple */
-
-#purpleMode:checked ~ .theme-switch
-label[for="purpleMode"] {
-
-    border-color: #b58cff;
-
+    font-size: 20px;
 }
 
 
@@ -183,8 +94,7 @@ h1 {
     text-align: center;
 
     border:
-        6px dashed
-        var(--main-color);
+        6px dashed;
 
     border-radius: 18px;
 
@@ -282,11 +192,6 @@ h1 {
 
 #language-select {
 
-    background:
-        var(--main-color);
-
-    color: #13171c;
-
     border: none;
 
     border-radius: 8px;
@@ -303,9 +208,6 @@ h1 {
 
 
 #language-select:hover {
-
-    background: #887912;
-
 }
 
 
@@ -321,11 +223,6 @@ h1 {
 
 
 #buttons-container button {
-
-    background:
-        var(--main-color);
-
-    color: #13171c;
 
     border-radius: 10px;
 
@@ -346,13 +243,7 @@ h1 {
 
 
 #buttons-container button:hover {
-
-    background: #887912;
-
-    color: #13171c;
-
     transform: translateY(-2px);
-
 }
 
 
@@ -375,9 +266,6 @@ h1 {
 
     margin-top: 20px;
 
-    color:
-        var(--main-color);
-
     text-decoration: none;
 
     font-weight: bold;
@@ -393,8 +281,7 @@ h1 {
     color: white;
 
     text-shadow:
-        0 0 10px
-        var(--main-color);
+        0 0 10px;
 
 }
 
@@ -408,57 +295,6 @@ h1 {
     font-size: 0.8rem;
 
 }
-
-
-/* =========================
-   PURPLE THEME
-   ========================= */
-
-body:has(#purpleMode:checked) {
-
-    --main-color: #b58cff;
-
-    --background-1: #101010;
-    --background-2: #101010;
-
-    --card: #181818;
-
-    text-shadow:
-        0 0 15px
-        rgba(181, 140, 255, 0.5);
-
-}
-
-
-/* Purple language selector */
-
-body:has(#purpleMode:checked)
-#language-select {
-
-    background: #b58cff;
-
-}
-
-
-/* Purple button */
-
-body:has(#purpleMode:checked)
-#buttons-container button {
-
-    background: #b58cff;
-
-}
-
-
-/* Purple hover */
-
-body:has(#purpleMode:checked)
-#buttons-container button:hover {
-
-    background: #8064c2;
-
-}
-
 
 /* =========================
    MOBILE
