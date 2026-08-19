@@ -11,6 +11,7 @@
 
     <title>RandomAyah</title>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/SleepKnight8/SleepKnight8_Themes/themes.css">
     <link rel="stylesheet" href="style.css">
 
     <link rel="icon" href="logo.jpg">
@@ -18,45 +19,21 @@
 </head>
 
 
-<body>
-
-    <!-- =========================
-         THEME SWITCH
-         ========================= -->
-
-    <input
-        type="radio"
-        name="theme"
-        id="yellowMode"
-        checked>
-
-    <input
-        type="radio"
-        name="theme"
-        id="purpleMode">
-
-
+<body class="sk-yellow">
     <div class="theme-switch">
 
-        <label
-            for="yellowMode"
-            class="theme-button">
-
+        <button
+            id="yellowMode"
+            onclick="setTheme('yellow')">
             🟡
+        </button>
 
-        </label>
-
-
-        <label
-            for="purpleMode"
-            class="theme-button">
-
+        <button
+            id="purpleMode"
+            onclick="setTheme('purple')">
             🟣
-
-        </label>
-
+        </button>
     </div>
-
 
     <!-- =========================
          TITLE
@@ -188,7 +165,7 @@
 
     </p>
 
-
+    <script src="https://cdn.jsdelivr.net/gh/SleepKnight8/SleepKnight8_Themes/themes.js"></script>
     <script src="index.js"></script>
 
 </body>
