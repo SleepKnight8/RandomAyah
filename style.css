@@ -219,6 +219,14 @@ h1 {
 
     margin-top: 20px;
 
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 15px;
+
 }
 
 
@@ -243,9 +251,101 @@ h1 {
 
 
 #buttons-container button:hover {
+
     transform: translateY(-2px);
+
 }
 
+
+/* =========================
+   MANUAL AYAH
+   ========================= */
+
+#manual-ayah-container {
+
+    display: flex;
+
+    align-items: end;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+}
+
+
+.ayah-input-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    text-align: left;
+
+}
+
+
+.ayah-input-group input {
+
+    width: 100px;
+
+    padding: 10px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    font-family: inherit;
+
+}
+
+
+#display-ayah-button {
+
+    height: 40px;
+
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 400px) {
+
+    #manual-ayah-container {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        width: 100%;
+
+        max-width: 250px;
+
+    }
+
+
+    .ayah-input-group input {
+
+        width: 100%;
+
+    }
+
+
+    #display-ayah-button {
+
+        width: 100%;
+
+    }
+
+}
 
 /* =========================
    PROGRESS
@@ -326,4 +426,55 @@ h1 {
 
     }
 
+}
+
+#buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+#manual-ayah-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+#manual-ayah-container input {
+    width: 90px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    text-align: center;
+}
+
+#manual-ayah-container button {
+    white-space: nowrap;
+}
+
+@media (max-width: 450px) {
+    #manual-ayah-container {
+        width: 100%;
+    }
+
+    #manual-ayah-container input {
+        width: 80px;
+    }
+}
+
+/* Remove number input arrows */
+
+#manual-ayah-container input[type="number"] {
+    appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+#manual-ayah-container input[type="number"]::-webkit-inner-spin-button,
+#manual-ayah-container input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
