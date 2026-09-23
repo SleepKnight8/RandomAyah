@@ -1,4 +1,13 @@
-<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html><!doctype html>
 <html lang="en">
 
 <head>
@@ -107,21 +116,41 @@
 
 
     <!-- =========================
-         BUTTON
-         ========================= -->
+     BUTTONS
+     ========================= -->
 
-    <div id="buttons-container">
+<div id="buttons-container">
+
+    <button
+        id="new-ayah-button"
+        onclick="RandomAyah()">
+        New Ayah
+    </button>
+
+    <div id="manual-ayah-container">
+
+        <input
+            type="number"
+            id="surah-input"
+            min="1"
+            max="114"
+            placeholder="Surah">
+
+        <input
+            type="number"
+            id="ayah-input"
+            min="1"
+            placeholder="Ayah">
 
         <button
-            id="new-ayah-button"
-            onclick="RandomAyah()">
-
-            New Ayah
-
+            id="display-ayah-button"
+            onclick="DisplayAyah()">
+            Display Ayah
         </button>
 
     </div>
 
+</div>
 
     <!-- =========================
          PROGRESS
