@@ -175,3 +175,57 @@ function Ayah_Explored_Display() {
     document.getElementById("ayah-progress-text").innerHTML = `
         Ayah Explored: ${num}/6236 (${percentage}%)`;
 }
+
+function DisplayAyah() {
+    let Surah = Number(document.getElementById("surah-input").value);
+    let Ayah = Number(document.getElementById("ayah-input").value);
+    let language = document.getElementById("language-select").value;
+
+    // Validate Surah number
+    if (!Number.isInteger(Surah) || Surah < 1 || Surah > 114) {
+        alert("Surah must be between 1 and 114.");
+        return;
+    }
+
+    // Validate Ayah number
+    if (
+        !Number.isInteger(Ayah) ||
+        Ayah < 1 ||
+        Ayah > AyahRange[Surah]
+    ) {
+        alert(
+            `Ayah must be between 1 and ${AyahRange[Surah]} for this Surah.`
+        );
+        return;
+    }
+
+    fetch(`https://api.alquran.cloud/v1/ayah/${Surah}:${Ayah}/${language}`)
+        .then(res => res.json())
+        .then(json => {
+            document.getElementById("ayah").innerHTML =
+                json["data"]["text"];
+
+            document.getElementById("surah").innerHTML =
+                `Surah Name: ${json["data"]["surah"]["englishName"]}`;
+
+            document.getElementById("ayahindex").innerHTML =
+                `Ayah Number: ${json["data"]["numberInSurah"]}`;
+
+            let currentAyah =
+                `${json["data"]["surah"]["number"]}:${json["data"]["numberInSurah"]}`;
+
+            let alreadyExplored =
+                Ayah_Explored.includes(currentAyah);
+
+            if (!alreadyExplored) {
+                Ayah_Explored.push(currentAyah);
+                Ayah_Explored_Num++;
+            }
+
+            save();
+            Ayah_Explored_Display();
+        })
+        .catch(error => {
+            alert(`Couldn't fetch data\n${error}`);
+        });
+}
